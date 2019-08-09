@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+{% load staticfiles %}
+
+<style>
+    div {
+        font-size: 40px;
+    }
+</style>
+
+<div>
+    <ul>
+        <a href="new.html"><li>새빛관</li></a>
+            <img src="{% static '새빛관.jpg' %}" height="400" width="800">
+        <li>한빛관</li>
+            <img src="{% static '' %}" alt="">
+        <li>평화관</li>
+            <img src="{% static '' %}" alt="">
+        <li>대동관</li>
+            <img src="{% static '대동관.jpg' %}" alt="" height="400" width="800">
+        <li>참빛관</li>
+            <img src="{% static '문구점.jpg' %}" alt="" height="400" width="800">
+    </ul>
+</div>
+
+{% endblock %}

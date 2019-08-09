@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block contents %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <h1>선배들의 조언</h1>
+    <br>
+    <form action="Advice"> 
+        <!-- 이 내용을 어디로 보낼 것인가? -->
+        <textarea name="advise" id="" cols="100" rows="15"></textarea>
+        <br>
+        <input type="submit">
+    </form>
+
+    <br><br>
+
+    {% for Advice in advice.all %}
+    <h1> {{Advice.title}} </h1>
+    <p> {{Advice.body}} </p>
+    <br><br>
+    {%endfor%}
+   
+
+</body>
+{% endblock %}
+</html>
+
+
+

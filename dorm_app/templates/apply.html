@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+{% block contents %}
+
+<div class="apply">
+  <h1>기숙사 신청</h1>
+
+  <div class="information">
+    <form action="{% url 'submit' %}">
+      <h5>학년</h5>
+      <input type="int" name="grade" />
+      <br /><br />
+
+      <h5>성적평균</h5>
+      <input type="float" name="score" />
+      <br /><br />
+
+      <h5>본가</h5>
+      <input type="text" name="house" />
+      <br /><br />
+
+      <h5>기숙사</h5>
+      <input type="text" name="dormitory" />
+      <br /><br />
+
+      <input type="submit" value="제출" />
+    </form>
+  </div>
+</div>
+<style>
+  @import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+  .apply {
+    text-align: center;
+    font-family: "Jeju Hallasan", cursive;
+  }
+
+  body {
+    margin: 0px;
+  }
+</style>
+{% endblock %}

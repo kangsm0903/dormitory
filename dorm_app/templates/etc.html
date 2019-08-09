@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block contents %}
+{% load staticfiles %}
+
+<style>
+    div {
+        font-size: 40px;
+    }
+
+    .mars, .earth {
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+        padding: 20px;
+    }
+</style>
+
+<div>
+    <ul>
+        <div class="mars">
+            <li>헬스장</li>
+            <li>pc실</li>
+            <img src="{% static '헬스장.jpg' %}" alt="" width="500" height="300">
+            <img src="{% static 'pc실.jpg' %}" alt="" width="500" height="300">
+        </div>
+        <div class="earth">
+            <li>세탁실</li>
+            <li>휴게실</li>
+            <img src="{% static '세탁실.jpg' %}" alt="" width="500" height="300">
+            <img src="{% static '휴게실.jpg' %}" alt="" width="500" height="300">
+        </div>
+    </ul>
+</div>
+
+{% endblock %}

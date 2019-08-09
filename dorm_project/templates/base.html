@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+       /* .main {
+            display: grid;
+            grid-template-rows: repeat(5,1fr);
+            text-decoration : none;
+        }*/
+
+        body{
+            margin:0;
+            padding:0;
+            font-family:sans-serif;
+            /* background: #000; */
+
+        }
+
+        header
+        {
+            padding:10px 100px;
+            box-sizing: border-box;
+        }
+        
+        section
+        {
+            width: 100%;
+            height: 100vh;
+
+        }
+
+        section.sec1
+        {
+            /* background: url(bg1.jpg); */
+            background-size: cover;
+        }
+
+        section.sec2 h2
+        {
+            font-size: 3em;
+            margin:0;
+            padding:0 0 20px;
+            color: #fff;
+
+        }
+
+        section.sec3
+        {
+            /* background: url(bg2.jpg) */
+            background-size:  cover;
+        }
+
+        nav
+        {
+            width: 100%;
+            height: 50px;
+            background: rgba(0,0,0,.8); 
+            border-top: 1px solid rgba(255,255,255,.2);
+            border-bottom: 1px solid rgba(255,255,255,.2);
+            position: sticky;
+            top:0;
+        }
+
+        nav ul
+        {
+            display: flex;
+            margin: 0;
+            padding: 0 100px;
+            float: right;
+        }
+        nav ul li
+        {
+            list-style: none;
+        }
+
+        nav ul li a
+        {
+            display:block;
+            color:#fff;
+            padding: 0 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            line-height: 50px;
+
+        }
+
+
+
+        body {
+            width : 100%;
+            height : 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+              
+<!-- <header><img src="logo.jpg"></header> -->
+<nav>
+    <ul>
+        <li><a href="{% url 'home' %}"><h4>Home으로</h4></a></li>
+        <li><a href="{% url 'apply' %}" class="active"><h4>기숙사 신청</h3></a></li>
+        <li><a href="{% url 'room' %}"><h4>기숙사 시설안내</h4></a></li>
+        <li><a href="{% url 'etc' %}"><h4>기타 시설안내</h4></a></li>
+        <li><a href="{% url 'comment' %}"><h4>선배들의 조언</h4></a></li>
+        <li><a href="{% url 'road' %}"><h4>찾아오시는 길</h4></a></li>
+        
+    </ul>
+</nav>
+
+<div class="container">
+    {% block contents %}
+    <!-- 이 안에 변경된 내용을 작성! -->
+    {% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>여기에 검색어를 입력해주세요!</h1>
+    <form action="{% url 'submit' %}" method="post">
+        {% csrf_token %} 
+        {{ form.as_p }} <!-- form --> 
+        <input type = "text">
+        <br>
+        <br>
+
+        <input type="submit" value = "제출"> 
+    </form> 
+    
+    {% if object_list %}  <!--검색 결과가 있을 경우--> 
+    {% for post in object_list %} 
+    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+    <!--  검색된 리스트를 보여준다.  -->
+    {% endfor %} 
+    {% elif search_word %} <!--  검색 결과가 없을 경우  -->
+    Search Word {{ search_word }} Not Found! <!-- 검색된 결과가 없다는 메세지를 보여준다.  -->
+    {% endif %}
+</body>
+</html>
